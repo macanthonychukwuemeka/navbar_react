@@ -303,6 +303,7 @@ nav {
 .social-icons {
   display: none;
 }
+
 @media screen and (min-width: 800px) {
   .nav-toggle {
     display: none;
@@ -311,7 +312,7 @@ nav {
     padding: 0;
   }
   .nav-center {
-    max-width: 2270px;
+    max-width: 1170px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -320,15 +321,15 @@ nav {
     border: 2px solid red;
   }
   .links-container {
-    height: auto;
-    align-items: center;
+    height: auto !important;
   }
   .links {
     display: flex;
     gap: 0.5rem;
   }
-  .link a {
-    padding: 0;
+  .social-icons {
+    display: flex;
+    gap: 0.5rem;
   }
   .links a:hover {
     padding: 0;
@@ -337,5 +338,12 @@ nav {
   .social-icons {
     display: flex;
     gap: 0.5rem;
+  }
+  .social-icons a {
+    color: var(--primary-500);
+    transition: var(--transition);
+  }
+  .social-icons a:hover {
+    color: var(--transition);
   }
 }
