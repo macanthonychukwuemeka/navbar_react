@@ -10,6 +10,8 @@ Check the data.jsx file and find two arrays: one for links and one for social ic
 
 #### Initial Approach
 
+#### Initial Approach
+
 Set up a Navbar component with a showLinks state value (boolean). Import the links from data and render them conditionally in the Navbar based on the showLinks state value. Set up a button that toggles the value and as a result, toggles the links. Set up CSS for the Navbar.
 
 #### Fixed Approach
@@ -45,10 +47,10 @@ The flow of the application should look something like this:
 Navbar.jsx
 
 ```js
-import { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
-import logo from './logo.svg';
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { links, social } from "./data";
+import logo from "./logo.svg";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -59,16 +61,16 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <img src={logo} className='logo' alt='logo' />
-          <button className='nav-toggle' onClick={toggleLinks}>
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} className="logo" alt="logo" />
+          <button className="nav-toggle" onClick={toggleLinks}>
             <FaBars />
           </button>
         </div>
         {showLinks && (
-          <div className='links-container'>
-            <ul className='links'>
+          <div className="links-container">
+            <ul className="links">
               {links.map((link) => {
                 const { id, url, text } = link;
                 return (
@@ -145,9 +147,9 @@ nav {
 
 ```js
 <div
-  className={showLinks ? 'links-container show-container' : 'links-container'}
+  className={showLinks ? "links-container show-container" : "links-container"}
 >
-  <ul className='links'>....links</ul>
+  <ul className="links">....links</ul>
 </div>
 ```
 
@@ -161,10 +163,10 @@ nav {
 ```
 
 ```js
-import { useState, useRef } from 'react';
-import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
-import logo from './logo.svg';
+import { useState, useRef } from "react";
+import { FaBars } from "react-icons/fa";
+import { links, social } from "./data";
+import logo from "./logo.svg";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -177,24 +179,24 @@ const Navbar = () => {
   const linkStyles = {
     height: showLinks
       ? `${linksRef.current.getBoundingClientRect().height}px`
-      : '0px',
+      : "0px",
   };
   return (
     <nav>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <img src={logo} className='logo' alt='logo' />
-          <button className='nav-toggle' onClick={toggleLinks}>
+      <div className="nav-center">
+        <div className="nav-header">
+          <img src={logo} className="logo" alt="logo" />
+          <button className="nav-toggle" onClick={toggleLinks}>
             <FaBars />
           </button>
         </div>
 
         <div
-          className='links-container'
+          className="links-container"
           ref={linksContainerRef}
           style={linkStyles}
         >
-          <ul className='links' ref={linksRef}>
+          <ul className="links" ref={linksRef}>
             {links.map((link) => {
               const { id, url, text } = link;
               return (
